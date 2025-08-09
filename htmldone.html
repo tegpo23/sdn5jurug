@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SD Negeri 5 Jurug</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root { --main-color: #2c7a7b; }
+
+    /* Navbar */
+    nav.navbar {
+      background-color: var(--main-color);
+    }
+    .nav-link {
+      color: white !important;
+      cursor: pointer;
+    }
+
+    /* Section default */
+    .section {
+      display: none;
+      padding: 2rem;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: black; /* teks default hitam */
+    }
+    .active-section { display: block; }
+
+    /* Header */
+    header.hero {
+      background: url('sekolahan.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+      position: relative;
+    }
+    header.hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    header.hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Khusus berita */
+    #berita {
+      background-color: white;
+      color: black;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #berita h2, #berita h4 {
+      color: black;
+    }
+
+    /* Foto guru */
+    .guru-foto {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .guru-foto:hover { transform: scale(1.05); }
+
+    /* Galeri foto */
+    .galeri-foto {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .galeri-foto:hover { transform: scale(1.05); }
+
+    /* Paragraf */
+    .section article p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <span class="navbar-brand text-white fw-bold">SD Negeri 5 Jurug</span>
+    <div class="ms-auto">
+      <a class="nav-link d-inline" onclick="showSection('berita')">Berita Terkini</a>
+      <a class="nav-link d-inline" onclick="showSection('galeri')">Galeri Kenangan</a>
+      <a class="nav-link d-inline" onclick="showSection('profil')">Profil Pengurus</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1 class="display-5 fw-bold">SD Negeri 5 Jurug</h1>
+  <p class="lead">Mendidik dengan Hati, Menginspirasi Masa Depan</p>
+</header>
+
+<main class="container my-4">
+
+  <!-- BERITA -->
+  <section id="berita" class="section active-section">
+    <h2 class="mb-4">Berita Terkini</h2>
+    <article class="mb-4">
+      <h4>Perpisahan Kelas VI</h4>
+      <p>Pada tanggal 8 Juni 2025, SD Negeri 5 Jurug mengadakan acara perpisahan untuk siswa kelas VI. Acara ini dihadiri oleh seluruh siswa, guru, dan wali murid.</p>
+      <p>Acara dimulai dengan sambutan dari Kepala Sekolah, dilanjutkan dengan penampilan seni dari siswa-siswi, dan diakhiri dengan sesi foto bersama.</p>
+    </article>
+    <article class="mb-4">
+      <h4>Rapat Komite Sekolah</h4>
+      <p>Dilaksanakan pada 15 Juli 2025 dan dihadiri oleh guru, pengurus komite, dan perwakilan orang tua murid. Agenda utama rapat ini adalah persiapan tahun ajaran baru dan pembahasan anggaran.</p>
+    </article>
+    <article>
+      <h4>Lomba Kebersihan Kelas</h4>
+      <p>Dalam rangka menyambut Hari Kemerdekaan, sekolah mengadakan lomba kebersihan kelas. Penilaian dilakukan oleh dewan guru dengan kriteria kerapian, kebersihan, dan kreativitas dekorasi kelas.</p>
+    </article>
+  </section>
+
+<!-- GALERI -->
+<section id="galeri" class="section">
+  <h2 class="mb-4">Galeri Kenangan</h2>
+  <div class="row g-3">
+
+    <!-- Foto 1 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="kaila.jpg" class="galeri-foto" alt="Kenangan 1" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Acara Perpisahan 2025</small>
+    </div>
+
+    <!-- Foto 2 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="kaila.jpg" class="galeri-foto" alt="Kenangan 2" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Lomba 17 Agustus</small>
+    </div>
+
+    <!-- Foto 3 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto3.jpg" class="galeri-foto" alt="Kenangan 3" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Pentas Seni</small>
+    </div>
+
+    <!-- Foto 4 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto4.jpg" class="galeri-foto" alt="Kenangan 4" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Upacara Bendera</small>
+    </div>
+
+    <!-- Foto 5 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto5.jpg" class="galeri-foto" alt="Kenangan 5" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Kegiatan Pramuka</small>
+    </div>
+
+    <!-- Foto 6 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto6.jpg" class="galeri-foto" alt="Kenangan 6" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Latihan Menari</small>
+    </div>
+
+    <!-- Foto 7 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto7.jpg" class="galeri-foto" alt="Kenangan 7" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Pawai Budaya</small>
+    </div>
+
+    <!-- Foto 8 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto8.jpg" class="galeri-foto" alt="Kenangan 8" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Kunjungan Edukasi</small>
+    </div>
+
+    <!-- Foto 9 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto9.jpg" class="galeri-foto" alt="Kenangan 9" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Gotong Royong</small>
+    </div>
+
+    <!-- Foto 10 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto10.jpg" class="galeri-foto" alt="Kenangan 10" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Lomba Mewarnai</small>
+    </div>
+
+    <!-- Foto 11 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto11.jpg" class="galeri-foto" alt="Kenangan 11" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Olahraga Bersama</small>
+    </div>
+
+    <!-- Foto 12 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto12.jpg" class="galeri-foto" alt="Kenangan 12" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Kegiatan Membaca</small>
+    </div>
+
+    <!-- Foto 13 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto13.jpg" class="galeri-foto" alt="Kenangan 13" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Pameran Hasil Karya</small>
+    </div>
+
+    <!-- Foto 14 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="kaila.jpg" class="galeri-foto" alt="Kenangan 14" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Festival Musik</small>
+    </div>
+
+    <!-- Foto 15 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto15.jpg" class="galeri-foto" alt="Kenangan 15" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Kegiatan Religi</small>
+    </div>
+
+    <!-- Foto 16 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto16.jpg" class="galeri-foto" alt="Kenangan 16" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Kunjungan Tamu</small>
+    </div>
+
+    <!-- Foto 17 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto17.jpg" class="galeri-foto" alt="Kenangan 17" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Senam Pagi</small>
+    </div>
+
+    <!-- Foto 18 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto18.jpg" class="galeri-foto" alt="Kenangan 18" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Kegiatan Outbound</small>
+    </div>
+
+    <!-- Foto 19 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto19.jpg" class="galeri-foto" alt="Kenangan 19" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Belajar Bersama</small>
+    </div>
+
+    <!-- Foto 20 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/foto20.jpg" class="galeri-foto" alt="Kenangan 20" onclick="showImage(this.src)">
+      <small class="d-block mt-1">Hari Guru Nasional</small>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROFIL -->
+<section id="profil" class="section">
+  <h2 class="mb-4">Profil Kepala Sekolah & Pengurus</h2>
+
+  <!-- ====== Kepala Sekolah ====== -->
+  <div class="row g-4 justify-content-center mb-5">
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="kaila.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Kepala Sekolah" onclick="showImage(this.src)">
+      <h5 class="mt-2">Kepala Sekolah</h5>
+      <small>Drs. Agus Setiawan</small>
+    </div>
+
+    <!-- ====== Wakil Kepala ====== -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="kaila.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Wakil Kepala" onclick="showImage(this.src)">
+      <h5 class="mt-2">Wakil Kepala</h5>
+      <small>Sri Wahyuni, S.Pd</small>
+    </div>
+  </div>
+
+  <!-- ====== Daftar Guru ====== -->
+  <div class="row g-4">
+    <!-- Guru 1 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru1.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 1" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Ahmad Fauzi, S.Pd</small>
+    </div>
+
+    <!-- Guru 2 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru2.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 2" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Budi Santoso, S.Pd</small>
+    </div>
+
+    <!-- Guru 3 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru3.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 3" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Citra Andini, S.Pd</small>
+    </div>
+
+    <!-- Guru 4 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru4.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 4" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Dewi Lestari, S.Pd</small>
+    </div>
+
+    <!-- Guru 5 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru5.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 5" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Eka Prasetya, S.Pd</small>
+    </div>
+
+    <!-- Guru 6 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru6.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 6" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Fajar Nugroho, S.Pd</small>
+    </div>
+
+    <!-- Guru 7 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru7.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 7" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Gita Rahmawati, S.Pd</small>
+    </div>
+
+    <!-- Guru 8 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru8.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 8" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Hadi Saputra, S.Pd</small>
+    </div>
+
+    <!-- Guru 9 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="kaila.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 9" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Intan Permata, S.Pd</small>
+    </div>
+
+    <!-- Guru 10 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru10.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 10" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Joko Susanto, S.Pd</small>
+    </div>
+
+    <!-- Guru 11 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru11.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 11" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Kiki Amelia, S.Pd</small>
+    </div>
+
+    <!-- Guru 12 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru12.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 12" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Lina Marlina, S.Pd</small>
+    </div>
+
+    <!-- Guru 13 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru13.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 13" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Muḥammad Ridwan, S.Pd</small>
+    </div>
+
+    <!-- Guru 14 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru14.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 14" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Nina Kartika, S.Pd</small>
+    </div>
+
+    <!-- Guru 15 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru15.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 15" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Oki Firmansyah, S.Pd</small>
+    </div>
+
+    <!-- Guru 16 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru16.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 16" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Putri Melati, S.Pd</small>
+    </div>
+
+    <!-- Guru 17 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru17.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 17" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Qori Hidayat, S.Pd</small>
+    </div>
+
+    <!-- Guru 18 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+      <img src="images/guru18.jpg" class="rounded-circle guru-foto mb-2"
+           alt="Guru 18" onclick="showImage(this.src)">
+      <h5 class="mt-2">Guru</h5>
+      <small>Rina Kurniawati, S.Pd</small>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="text-center py-3 text-white" style="background-color: var(--main-color);">
+  <p class="mb-0">&copy; 2025 SD Negeri 5 Jurug.</p>
+</footer>
+
+<!-- Modal Gambar -->
+<div class="modal fade" id="imageModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <img id="modalImage" src="" class="img-fluid rounded" alt="Zoom">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active-section'));
+    document.getElementById(id).classList.add('active-section');
+  }
+
+  function showImage(src) {
+    document.getElementById('modalImage').src = src;
+    new bootstrap.Modal(document.getElementById('imageModal')).show();
+  }
+</script>
+
+</body>
+</html>
